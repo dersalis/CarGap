@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DA4002442922D7FB00DEC92A /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4002432922D7FB00DEC92A /* CarView.swift */; };
+		DA4002462922E2AB00DEC92A /* RefuelingHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4002452922E2AB00DEC92A /* RefuelingHistoryView.swift */; };
+		DA4002482922E4CE00DEC92A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4002472922E4CE00DEC92A /* SettingsView.swift */; };
+		DA40024A2922E80800DEC92A /* AddCarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4002492922E80800DEC92A /* AddCarView.swift */; };
 		DA6EC6312922D5B6006621E4 /* CarGapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6EC6302922D5B6006621E4 /* CarGapApp.swift */; };
 		DA6EC6332922D5B6006621E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6EC6322922D5B6006621E4 /* ContentView.swift */; };
 		DA6EC6352922D5B9006621E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6EC6342922D5B9006621E4 /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 
 /* Begin PBXFileReference section */
 		DA4002432922D7FB00DEC92A /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
+		DA4002452922E2AB00DEC92A /* RefuelingHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefuelingHistoryView.swift; sourceTree = "<group>"; };
+		DA4002472922E4CE00DEC92A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		DA4002492922E80800DEC92A /* AddCarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarView.swift; sourceTree = "<group>"; };
 		DA6EC62D2922D5B6006621E4 /* CarGap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarGap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6EC6302922D5B6006621E4 /* CarGapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarGapApp.swift; sourceTree = "<group>"; };
 		DA6EC6322922D5B6006621E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +44,9 @@
 			isa = PBXGroup;
 			children = (
 				DA4002432922D7FB00DEC92A /* CarView.swift */,
+				DA4002452922E2AB00DEC92A /* RefuelingHistoryView.swift */,
+				DA4002472922E4CE00DEC92A /* SettingsView.swift */,
+				DA4002492922E80800DEC92A /* AddCarView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -148,9 +157,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA4002482922E4CE00DEC92A /* SettingsView.swift in Sources */,
 				DA6EC6332922D5B6006621E4 /* ContentView.swift in Sources */,
 				DA6EC6312922D5B6006621E4 /* CarGapApp.swift in Sources */,
+				DA40024A2922E80800DEC92A /* AddCarView.swift in Sources */,
 				DA4002442922D7FB00DEC92A /* CarView.swift in Sources */,
+				DA4002462922E2AB00DEC92A /* RefuelingHistoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
