@@ -8,14 +8,54 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("selectedCarName") var selectedCarName: String = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView {
+            VStack(alignment: .leading) {
+                
+            }
+            .navigationTitle(selectedCarName)
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Menu {
+                        Section {
+                            Button(action: {
+                                selectedCarName = "Dacia Duster"
+                            }) {
+                                Label("Dacia Duster", systemImage: "doc")
+                            }
+
+                            Button(action: {
+                                selectedCarName = "Renault Clio"
+                            }) {
+                                Label("Renault Clio", systemImage: "folder")
+                            }
+                        }
+                        Section {
+                            Button(action: {}) {
+                                Label("Add car", systemImage: "plus")
+                            }
+                        }
+                    }
+                    label: {
+                        Label("Cars", systemImage: "car.2")
+                    }
+                }
+                
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    Button {
+//                        //showingAddView.toggle()
+//                    } label: {
+//                        Label("Cars", systemImage: "car.2")
+//                    }
+//                }
+
+            }
         }
-        .padding()
+        .onAppear {
+            selectedCarName = "Selected Car" // TODO: Usunąć
+        }
     }
 }
 

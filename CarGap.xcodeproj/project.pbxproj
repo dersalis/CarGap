@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA4002442922D7FB00DEC92A /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4002432922D7FB00DEC92A /* CarView.swift */; };
 		DA6EC6312922D5B6006621E4 /* CarGapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6EC6302922D5B6006621E4 /* CarGapApp.swift */; };
 		DA6EC6332922D5B6006621E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6EC6322922D5B6006621E4 /* ContentView.swift */; };
 		DA6EC6352922D5B9006621E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6EC6342922D5B9006621E4 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA4002432922D7FB00DEC92A /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
 		DA6EC62D2922D5B6006621E4 /* CarGap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarGap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6EC6302922D5B6006621E4 /* CarGapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarGapApp.swift; sourceTree = "<group>"; };
 		DA6EC6322922D5B6006621E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA4002422922D7E400DEC92A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				DA4002432922D7FB00DEC92A /* CarView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		DA6EC6242922D5B5006621E4 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +61,9 @@
 		DA6EC62F2922D5B6006621E4 /* CarGap */ = {
 			isa = PBXGroup;
 			children = (
-				DA6EC6302922D5B6006621E4 /* CarGapApp.swift */,
 				DA6EC6322922D5B6006621E4 /* ContentView.swift */,
+				DA4002422922D7E400DEC92A /* Screens */,
+				DA6EC6302922D5B6006621E4 /* CarGapApp.swift */,
 				DA6EC6342922D5B9006621E4 /* Assets.xcassets */,
 				DA6EC6362922D5B9006621E4 /* Preview Content */,
 			);
@@ -139,6 +150,7 @@
 			files = (
 				DA6EC6332922D5B6006621E4 /* ContentView.swift in Sources */,
 				DA6EC6312922D5B6006621E4 /* CarGapApp.swift in Sources */,
+				DA4002442922D7FB00DEC92A /* CarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
