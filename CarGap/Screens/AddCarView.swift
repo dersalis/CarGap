@@ -10,12 +10,54 @@ import SwiftUI
 struct AddCarView: View {
     @Environment(\.presentationMode) var presentationMode
     
+    @State var name: String = ""
+    @State var description: String = ""
+    @State var mark: String = ""
+    @State var model: String = ""
+    
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
+//                Divider()
                 VStack {
-                    Divider()
                     
+                    GroupBox(
+                        label: Label("Car", systemImage: "car")
+                    ){
+//                        Divider()
+                        TextField("Name", text: $name)
+                            .padding(.vertical, 5)
+                        
+                        Divider()
+                        TextField("Description", text: $description)
+                            .padding(.vertical, 5)
+                        
+                        Divider()
+                        TextField("Mark", text: $mark)
+                            .padding(.vertical, 5)
+                        
+                        Divider()
+                        TextField("Model", text: $model)
+                            .padding(.vertical, 5)
+                    }
+                    .padding(.vertical, 5)
+                    .padding(.horizontal)
+                    
+                    GroupBox(
+                        label: Label("Units", systemImage: "ruler")
+                    ){
+                        Divider()
+                    }
+                    .padding(.vertical, 5)
+                    .padding(.horizontal)
+                    
+                    GroupBox(
+                        label: Label("Fuel", systemImage: "fuelpump")
+                    ){
+                        Divider()
+                    }
+                    .padding(.vertical, 5)
+                    .padding(.horizontal)
                     
                 }
                 .navigationBarTitle("Add car")

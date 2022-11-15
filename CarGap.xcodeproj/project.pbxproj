@@ -15,6 +15,8 @@
 		DA6EC6332922D5B6006621E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6EC6322922D5B6006621E4 /* ContentView.swift */; };
 		DA6EC6352922D5B9006621E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6EC6342922D5B9006621E4 /* Assets.xcassets */; };
 		DA6EC6382922D5B9006621E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6EC6372922D5B9006621E4 /* Preview Assets.xcassets */; };
+		DAA805AB29243B3D00019ACB /* CarGapModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAA805A929243B3D00019ACB /* CarGapModel.xcdatamodeld */; };
+		DAA805AD2924402400019ACB /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805AC2924402400019ACB /* StatisticsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		DA6EC6322922D5B6006621E4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DA6EC6342922D5B9006621E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA6EC6372922D5B9006621E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DAA805AA29243B3D00019ACB /* CarGapModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarGapModel.xcdatamodel; sourceTree = "<group>"; };
+		DAA805AC2924402400019ACB /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 				DA4002452922E2AB00DEC92A /* RefuelingHistoryView.swift */,
 				DA4002472922E4CE00DEC92A /* SettingsView.swift */,
 				DA4002492922E80800DEC92A /* AddCarView.swift */,
+				DAA805AC2924402400019ACB /* StatisticsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -72,6 +77,7 @@
 			children = (
 				DA6EC6322922D5B6006621E4 /* ContentView.swift */,
 				DA4002422922D7E400DEC92A /* Screens */,
+				DAA805A829243B1100019ACB /* Data */,
 				DA6EC6302922D5B6006621E4 /* CarGapApp.swift */,
 				DA6EC6342922D5B9006621E4 /* Assets.xcassets */,
 				DA6EC6362922D5B9006621E4 /* Preview Content */,
@@ -85,6 +91,14 @@
 				DA6EC6372922D5B9006621E4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DAA805A829243B1100019ACB /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DAA805A929243B3D00019ACB /* CarGapModel.xcdatamodeld */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +175,8 @@
 				DA6EC6332922D5B6006621E4 /* ContentView.swift in Sources */,
 				DA6EC6312922D5B6006621E4 /* CarGapApp.swift in Sources */,
 				DA40024A2922E80800DEC92A /* AddCarView.swift in Sources */,
+				DAA805AB29243B3D00019ACB /* CarGapModel.xcdatamodeld in Sources */,
+				DAA805AD2924402400019ACB /* StatisticsView.swift in Sources */,
 				DA4002442922D7FB00DEC92A /* CarView.swift in Sources */,
 				DA4002462922E2AB00DEC92A /* RefuelingHistoryView.swift in Sources */,
 			);
@@ -363,6 +379,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DAA805A929243B3D00019ACB /* CarGapModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DAA805AA29243B3D00019ACB /* CarGapModel.xcdatamodel */,
+			);
+			currentVersion = DAA805AA29243B3D00019ACB /* CarGapModel.xcdatamodel */;
+			path = CarGapModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DA6EC6252922D5B5006621E4 /* Project object */;
 }
