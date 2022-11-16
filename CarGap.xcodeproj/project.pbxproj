@@ -17,6 +17,14 @@
 		DA6EC6382922D5B9006621E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6EC6372922D5B9006621E4 /* Preview Assets.xcassets */; };
 		DAA805AB29243B3D00019ACB /* CarGapModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAA805A929243B3D00019ACB /* CarGapModel.xcdatamodeld */; };
 		DAA805AD2924402400019ACB /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805AC2924402400019ACB /* StatisticsView.swift */; };
+		DAA805B32925743200019ACB /* GroupBoxInfoRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805B22925743200019ACB /* GroupBoxInfoRowView.swift */; };
+		DAA805B52925765B00019ACB /* GroupBoxLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805B42925765B00019ACB /* GroupBoxLinkView.swift */; };
+		DAA805B829257ADD00019ACB /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805B729257ADD00019ACB /* UIApplication.swift */; };
+		DAA805BB29257F1300019ACB /* PickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805BA29257F1300019ACB /* PickerItem.swift */; };
+		DAA805BD2925895D00019ACB /* DistanceUnitsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805BC2925895D00019ACB /* DistanceUnitsData.swift */; };
+		DAA805BF292589C500019ACB /* CombustionUnitsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805BE292589C500019ACB /* CombustionUnitsData.swift */; };
+		DAA805C129258A0300019ACB /* FuelUnitsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C029258A0300019ACB /* FuelUnitsData.swift */; };
+		DAA805C329258A2200019ACB /* FuelTypeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C229258A2200019ACB /* FuelTypeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +39,14 @@
 		DA6EC6372922D5B9006621E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DAA805AA29243B3D00019ACB /* CarGapModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarGapModel.xcdatamodel; sourceTree = "<group>"; };
 		DAA805AC2924402400019ACB /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		DAA805B22925743200019ACB /* GroupBoxInfoRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBoxInfoRowView.swift; sourceTree = "<group>"; };
+		DAA805B42925765B00019ACB /* GroupBoxLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupBoxLinkView.swift; sourceTree = "<group>"; };
+		DAA805B729257ADD00019ACB /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
+		DAA805BA29257F1300019ACB /* PickerItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerItem.swift; sourceTree = "<group>"; };
+		DAA805BC2925895D00019ACB /* DistanceUnitsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceUnitsData.swift; sourceTree = "<group>"; };
+		DAA805BE292589C500019ACB /* CombustionUnitsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombustionUnitsData.swift; sourceTree = "<group>"; };
+		DAA805C029258A0300019ACB /* FuelUnitsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelUnitsData.swift; sourceTree = "<group>"; };
+		DAA805C229258A2200019ACB /* FuelTypeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelTypeData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +92,12 @@
 			isa = PBXGroup;
 			children = (
 				DA6EC6322922D5B6006621E4 /* ContentView.swift */,
+				DA6EC6302922D5B6006621E4 /* CarGapApp.swift */,
+				DAA805AE2925729C00019ACB /* Views */,
+				DAA805B929257EE700019ACB /* Models */,
 				DA4002422922D7E400DEC92A /* Screens */,
 				DAA805A829243B1100019ACB /* Data */,
-				DA6EC6302922D5B6006621E4 /* CarGapApp.swift */,
+				DAA805B629257AB200019ACB /* Extensions */,
 				DA6EC6342922D5B9006621E4 /* Assets.xcassets */,
 				DA6EC6362922D5B9006621E4 /* Preview Content */,
 			);
@@ -97,8 +116,45 @@
 			isa = PBXGroup;
 			children = (
 				DAA805A929243B3D00019ACB /* CarGapModel.xcdatamodeld */,
+				DAA805BC2925895D00019ACB /* DistanceUnitsData.swift */,
+				DAA805BE292589C500019ACB /* CombustionUnitsData.swift */,
+				DAA805C029258A0300019ACB /* FuelUnitsData.swift */,
+				DAA805C229258A2200019ACB /* FuelTypeData.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		DAA805AE2925729C00019ACB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DAA805AF292572A800019ACB /* Common */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DAA805AF292572A800019ACB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DAA805B22925743200019ACB /* GroupBoxInfoRowView.swift */,
+				DAA805B42925765B00019ACB /* GroupBoxLinkView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DAA805B629257AB200019ACB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DAA805B729257ADD00019ACB /* UIApplication.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DAA805B929257EE700019ACB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DAA805BA29257F1300019ACB /* PickerItem.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,10 +229,18 @@
 			files = (
 				DA4002482922E4CE00DEC92A /* SettingsView.swift in Sources */,
 				DA6EC6332922D5B6006621E4 /* ContentView.swift in Sources */,
+				DAA805B52925765B00019ACB /* GroupBoxLinkView.swift in Sources */,
+				DAA805B829257ADD00019ACB /* UIApplication.swift in Sources */,
+				DAA805BB29257F1300019ACB /* PickerItem.swift in Sources */,
+				DAA805C329258A2200019ACB /* FuelTypeData.swift in Sources */,
 				DA6EC6312922D5B6006621E4 /* CarGapApp.swift in Sources */,
+				DAA805BD2925895D00019ACB /* DistanceUnitsData.swift in Sources */,
 				DA40024A2922E80800DEC92A /* AddCarView.swift in Sources */,
 				DAA805AB29243B3D00019ACB /* CarGapModel.xcdatamodeld in Sources */,
 				DAA805AD2924402400019ACB /* StatisticsView.swift in Sources */,
+				DAA805BF292589C500019ACB /* CombustionUnitsData.swift in Sources */,
+				DAA805C129258A0300019ACB /* FuelUnitsData.swift in Sources */,
+				DAA805B32925743200019ACB /* GroupBoxInfoRowView.swift in Sources */,
 				DA4002442922D7FB00DEC92A /* CarView.swift in Sources */,
 				DA4002462922E2AB00DEC92A /* RefuelingHistoryView.swift in Sources */,
 			);
@@ -319,7 +383,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.druigo.CarGap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -348,7 +412,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.druigo.CarGap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
