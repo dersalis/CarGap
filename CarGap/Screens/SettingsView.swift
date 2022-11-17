@@ -52,7 +52,7 @@ struct SettingsView: View {
                                 }
                             }
                         }
-                        //.padding(.vertical, 5)
+                        .padding(.vertical, 1)
                     }
                 }
                 .padding(.vertical, 5)

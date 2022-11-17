@@ -24,7 +24,7 @@
 		DAA805BD2925895D00019ACB /* DistanceUnitsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805BC2925895D00019ACB /* DistanceUnitsData.swift */; };
 		DAA805BF292589C500019ACB /* CombustionUnitsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805BE292589C500019ACB /* CombustionUnitsData.swift */; };
 		DAA805C129258A0300019ACB /* FuelUnitsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C029258A0300019ACB /* FuelUnitsData.swift */; };
-		DAA805C329258A2200019ACB /* FuelTypeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C229258A2200019ACB /* FuelTypeData.swift */; };
+		DAA805C329258A2200019ACB /* FuelTypesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C229258A2200019ACB /* FuelTypesData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,7 @@
 		DAA805BC2925895D00019ACB /* DistanceUnitsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceUnitsData.swift; sourceTree = "<group>"; };
 		DAA805BE292589C500019ACB /* CombustionUnitsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombustionUnitsData.swift; sourceTree = "<group>"; };
 		DAA805C029258A0300019ACB /* FuelUnitsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelUnitsData.swift; sourceTree = "<group>"; };
-		DAA805C229258A2200019ACB /* FuelTypeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelTypeData.swift; sourceTree = "<group>"; };
+		DAA805C229258A2200019ACB /* FuelTypesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelTypesData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +119,7 @@
 				DAA805BC2925895D00019ACB /* DistanceUnitsData.swift */,
 				DAA805BE292589C500019ACB /* CombustionUnitsData.swift */,
 				DAA805C029258A0300019ACB /* FuelUnitsData.swift */,
-				DAA805C229258A2200019ACB /* FuelTypeData.swift */,
+				DAA805C229258A2200019ACB /* FuelTypesData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 				DAA805B52925765B00019ACB /* GroupBoxLinkView.swift in Sources */,
 				DAA805B829257ADD00019ACB /* UIApplication.swift in Sources */,
 				DAA805BB29257F1300019ACB /* PickerItem.swift in Sources */,
-				DAA805C329258A2200019ACB /* FuelTypeData.swift in Sources */,
+				DAA805C329258A2200019ACB /* FuelTypesData.swift in Sources */,
 				DA6EC6312922D5B6006621E4 /* CarGapApp.swift in Sources */,
 				DAA805BD2925895D00019ACB /* DistanceUnitsData.swift in Sources */,
 				DA40024A2922E80800DEC92A /* AddCarView.swift in Sources */,
