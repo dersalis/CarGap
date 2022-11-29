@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct AddCarView: View {
     @Environment(\.presentationMode) var presentationMode
@@ -230,6 +231,7 @@ struct AddCarView: View {
                     }
                     .padding(.vertical, 5)
                     .padding(.horizontal)
+                    
                     
                 }
                 .navigationBarTitle("Add car")
