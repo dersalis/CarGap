@@ -25,6 +25,7 @@
 		DAA805BF292589C500019ACB /* CombustionUnitsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805BE292589C500019ACB /* CombustionUnitsData.swift */; };
 		DAA805C129258A0300019ACB /* FuelUnitsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C029258A0300019ACB /* FuelUnitsData.swift */; };
 		DAA805C329258A2200019ACB /* FuelTypesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C229258A2200019ACB /* FuelTypesData.swift */; };
+		DAA805C52937F60600019ACB /* AddCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C42937F60500019ACB /* AddCar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		DAA805BE292589C500019ACB /* CombustionUnitsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombustionUnitsData.swift; sourceTree = "<group>"; };
 		DAA805C029258A0300019ACB /* FuelUnitsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelUnitsData.swift; sourceTree = "<group>"; };
 		DAA805C229258A2200019ACB /* FuelTypesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelTypesData.swift; sourceTree = "<group>"; };
+		DAA805C42937F60500019ACB /* AddCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				DAA805BA29257F1300019ACB /* PickerItem.swift */,
+				DAA805C42937F60500019ACB /* AddCar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				DAA805BF292589C500019ACB /* CombustionUnitsData.swift in Sources */,
 				DAA805C129258A0300019ACB /* FuelUnitsData.swift in Sources */,
 				DAA805B32925743200019ACB /* GroupBoxInfoRowView.swift in Sources */,
+				DAA805C52937F60600019ACB /* AddCar.swift in Sources */,
 				DA4002442922D7FB00DEC92A /* CarView.swift in Sources */,
 				DA4002462922E2AB00DEC92A /* RefuelingHistoryView.swift in Sources */,
 			);

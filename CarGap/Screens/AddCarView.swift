@@ -39,6 +39,8 @@ struct AddCarView: View {
     @State var insurande: String = ""
     @State var insurandeDate: Date = Date()
     
+    @State var selectedPhotoItem: PhotosPickerItem? = nil
+    @State var selectedImageData: Data? = nil
     
     @State var isSaveDisabled: Bool = true
     
@@ -47,7 +49,6 @@ struct AddCarView: View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
-                    
                     // Car
                     GroupBox(
                         label: Label("Car", systemImage: "car")
@@ -202,8 +203,33 @@ struct AddCarView: View {
                         label: Label("Description", systemImage: "list.bullet.rectangle")
                     ){
                         Divider()
-                        TextField("Photo", text: $photo)
-                            .padding(.vertical, 5)
+                        HStack {
+                            //TextField("Photo", text: $photo)
+                            PhotosPicker(
+                                selection: $selectedPhotoItem,
+                                matching: .images,
+                                photoLibrary: .shared()) {
+                                    Text("Photo")
+                                }
+                                .onChange(of: selectedPhotoItem) { newItem in
+                                    Task {
+                                        // Retrieve selected asset in the form of Data
+                                        if let data = try? await newItem?.loadTransferable(type: Data.self) {
+                                            selectedImageData = data
+                                        }
+                                    }
+                                }
+                            Spacer()
+                            if let selectedImageData,
+                               let uiImage = UIImage(data: selectedImageData) {
+                                Image(uiImage: uiImage)
+                                    .resizable()
+                                    //.scaledToFit()
+                                    .frame(width: 24, height: 24)
+                                    .cornerRadius(2)
+                            }
+                        }
+                        .padding(.vertical, 5)
                         
                         Divider()
                         TextField("Year", text: $year)
