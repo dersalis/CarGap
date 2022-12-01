@@ -10,16 +10,19 @@ import PhotosUI
 
 struct AddCarView: View {
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     private let fuelTypes: [PickerItem] = fuelTypesData
     private let fuelUnits: [PickerItem] = fuelUnitsData
     private let combustionUnits: [PickerItem] = combustionUnitsData
     
-    @State var name: String = ""
-    @State var mark: String = ""
-    @State var model: String = ""
-    @State var registrationNo: String = ""
-    @State var description: String = ""
+    @State var car: AddCar = AddCar()
+    
+//    @State var name: String = ""
+//    @State var mark: String = ""
+//    @State var model: String = ""
+//    @State var registrationNo: String = ""
+//    @State var description: String = ""
     
     @State var tankCapacity1: String = ""
     @State var fuelType1: Int = 0
@@ -33,14 +36,13 @@ struct AddCarView: View {
     @State var fuelUnit2: Int = 0
     @State var combustionUnit2: Int = 0
     
-    @State var photo: String = ""
-    @State var year: String = ""
+    @State var photo: Data? = nil
+    @State var year: Date = Date()
     @State var vin: String = ""
     @State var insurande: String = ""
     @State var insurandeDate: Date = Date()
     
-    @State var selectedPhotoItem: PhotosPickerItem? = nil
-    @State var selectedImageData: Data? = nil
+    @State var selectedPhoto: PhotosPickerItem? = nil
     
     @State var isSaveDisabled: Bool = true
     
@@ -54,27 +56,27 @@ struct AddCarView: View {
                         label: Label("Car", systemImage: "car")
                     ){
                         Divider()
-                        TextField("Name", text: $name)
-                            .onChange(of: name) { newValue in
+                        TextField("Name", text: $car.name)
+                            .onChange(of: car.name) { newValue in
                                 print(newValue)
                                 isSaveDisabled = newValue.count > 0 ? true : false
                             }
                             .padding(.vertical, 5)
                         
                         Divider()
-                        TextField("Mark", text: $mark)
+                        TextField("Mark", text: $car.mark)
                             .padding(.vertical, 5)
                         
                         Divider()
-                        TextField("Model", text: $model)
+                        TextField("Model", text: $car.model)
                             .padding(.vertical, 5)
                         
                         Divider()
-                        TextField("RegistrationNo", text: $registrationNo)
+                        TextField("RegistrationNo", text: $car.registrationNo)
                             .padding(.vertical, 5)
                         
                         Divider()
-                        TextField("Description", text: $description)
+                        TextField("Description", text: $car.description)
                             .padding(.vertical, 5)
                         
                     }
@@ -88,6 +90,7 @@ struct AddCarView: View {
                         
                         Divider()
                         TextField("Tank capacity", text: $tankCapacity1)
+                            .keyboardType(.numberPad)
                             .padding(.vertical, 5)
                         
                         Divider()
@@ -151,6 +154,7 @@ struct AddCarView: View {
                         
                         Divider()
                         TextField("Tank capacity", text: $tankCapacity1)
+                            .keyboardType(.numberPad)
                             .padding(.vertical, 5)
                         
                         Divider()
@@ -204,36 +208,50 @@ struct AddCarView: View {
                     ){
                         Divider()
                         HStack {
-                            //TextField("Photo", text: $photo)
                             PhotosPicker(
-                                selection: $selectedPhotoItem,
+                                selection: $selectedPhoto,
                                 matching: .images,
                                 photoLibrary: .shared()) {
                                     Text("Photo")
                                 }
-                                .onChange(of: selectedPhotoItem) { newItem in
+                                .onChange(of: selectedPhoto) { newItem in
                                     Task {
                                         // Retrieve selected asset in the form of Data
                                         if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                                            selectedImageData = data
+                                            photo = data
                                         }
                                     }
                                 }
+                                .padding(.vertical, 6)
                             Spacer()
-                            if let selectedImageData,
-                               let uiImage = UIImage(data: selectedImageData) {
+                            if let photo,
+                               let uiImage = UIImage(data: photo) {
                                 Image(uiImage: uiImage)
                                     .resizable()
                                     //.scaledToFit()
-                                    .frame(width: 24, height: 24)
-                                    .cornerRadius(2)
+                                    .frame(width: 30, height: 28)
+                                    .cornerRadius(5)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 5)
+                                            .stroke(.gray, lineWidth: 0.5))
+                                    
                             }
                         }
-                        .padding(.vertical, 5)
                         
+                        
+//                        Divider()
+//                        TextField("Year", text: $year)
+//                            .padding(.vertical, 5)
                         Divider()
-                        TextField("Year", text: $year)
-                            .padding(.vertical, 5)
+                        HStack {
+                            Text("Year")
+                                .foregroundColor(.gray)
+                            Spacer()
+                            DatePicker(selection: $insurandeDate, displayedComponents: .date) {}
+                                .padding(.top, 1)
+//                                .padding(.bottom, -5)
+                        }
+                        .padding(.vertical, 1)
                         
                         Divider()
                         TextField("VIN", text: $vin)
@@ -273,10 +291,12 @@ struct AddCarView: View {
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
-                            // presentationMode.wrappedValue.dismiss()
+                            CarController().addCar(newCar: car, context: managedObjectContext)
+                            presentationMode.wrappedValue.dismiss()
                         }, label: {
                             Text("Save")
-                                .disabled(isSaveDisabled)
+//                                .disabled(isSaveDisabled)
+                                .disabled(car.name == "")
                         })
                     }
                 }

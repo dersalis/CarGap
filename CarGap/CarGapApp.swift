@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct CarGapApp: App {
+    @State private var carController: CarController = CarController()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.managedObjectContext, carController.container.viewContext)
         }
     }
 }
