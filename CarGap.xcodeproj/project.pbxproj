@@ -27,6 +27,8 @@
 		DAA805C329258A2200019ACB /* FuelTypesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C229258A2200019ACB /* FuelTypesData.swift */; };
 		DAA805C52937F60600019ACB /* AddCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C42937F60500019ACB /* AddCar.swift */; };
 		DAA805C8293942FD00019ACB /* CarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C7293942FD00019ACB /* CarController.swift */; };
+		DAA805CA293BBC3C00019ACB /* CarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C9293BBC3C00019ACB /* CarsView.swift */; };
+		DAA805CC293BEB4700019ACB /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805CB293BEB4700019ACB /* CircleImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		DAA805C229258A2200019ACB /* FuelTypesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelTypesData.swift; sourceTree = "<group>"; };
 		DAA805C42937F60500019ACB /* AddCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCar.swift; sourceTree = "<group>"; };
 		DAA805C7293942FD00019ACB /* CarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarController.swift; sourceTree = "<group>"; };
+		DAA805C9293BBC3C00019ACB /* CarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsView.swift; sourceTree = "<group>"; };
+		DAA805CB293BEB4700019ACB /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 				DA4002472922E4CE00DEC92A /* SettingsView.swift */,
 				DA4002492922E80800DEC92A /* AddCarView.swift */,
 				DAA805AC2924402400019ACB /* StatisticsView.swift */,
+				DAA805C9293BBC3C00019ACB /* CarsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				DAA805AF292572A800019ACB /* Common */,
+				DAA805CB293BEB4700019ACB /* CircleImage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -249,6 +255,8 @@
 				DAA805C329258A2200019ACB /* FuelTypesData.swift in Sources */,
 				DA6EC6312922D5B6006621E4 /* CarGapApp.swift in Sources */,
 				DAA805BD2925895D00019ACB /* DistanceUnitsData.swift in Sources */,
+				DAA805CA293BBC3C00019ACB /* CarsView.swift in Sources */,
+				DAA805CC293BEB4700019ACB /* CircleImage.swift in Sources */,
 				DA40024A2922E80800DEC92A /* AddCarView.swift in Sources */,
 				DAA805AB29243B3D00019ACB /* CarGapModel.xcdatamodeld in Sources */,
 				DAA805C8293942FD00019ACB /* CarController.swift in Sources */,
