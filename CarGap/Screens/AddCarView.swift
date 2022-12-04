@@ -18,30 +18,6 @@ struct AddCarView: View {
     
     @State var car: AddCar = AddCar()
     
-//    @State var name: String = ""
-//    @State var mark: String = ""
-//    @State var model: String = ""
-//    @State var registrationNo: String = ""
-//    @State var description: String = ""
-    
-    @State var tankCapacity1: String = ""
-    @State var fuelType1: Int = 0
-    @State var fuelUnit1: Int = 0
-    @State var combustionUnit1: Int = 0
-    
-    @State var isSecondTank: Bool = false
-    
-    @State var tankCapacity2: String = ""
-    @State var fuelType2: Int = 0
-    @State var fuelUnit2: Int = 0
-    @State var combustionUnit2: Int = 0
-    
-    @State var photo: Data? = nil
-    @State var year: Date = Date()
-    @State var vin: String = ""
-    @State var insurande: String = ""
-    @State var insurandeDate: Date = Date()
-    
     @State var selectedPhoto: PhotosPickerItem? = nil
     
     @State var isSaveDisabled: Bool = true
@@ -85,11 +61,11 @@ struct AddCarView: View {
                     
                     // Fuel - tank 1
                     GroupBox(
-                        label: Label(isSecondTank ? "Fuel - tank 1" : "Fuel", systemImage: "fuelpump")
+                        label: Label(car.isSecondTank ? "Fuel - tank 1" : "Fuel", systemImage: "fuelpump")
                     ){
                         
                         Divider()
-                        TextField("Tank capacity", text: $tankCapacity1)
+                        TextField("Tank capacity", text: $car.tankCapacity1)
                             .keyboardType(.numberPad)
                             .padding(.vertical, 5)
                         
@@ -98,7 +74,7 @@ struct AddCarView: View {
                             Text("Fuel type")
                                 .foregroundColor(.gray)
                             Spacer()
-                            Picker(selection: $fuelType1, label: Text("Fuel type")) {
+                            Picker(selection: $car.fuelType1, label: Text("Fuel type")) {
                                 ForEach(0 ..< fuelTypes.count) {
                                     Text(self.fuelTypes[$0].value)
                                 }
@@ -111,7 +87,7 @@ struct AddCarView: View {
                             Text("Fuel unit")
                                 .foregroundColor(.gray)
                             Spacer()
-                            Picker(selection: $fuelUnit1, label: Text("Fuel unit")) {
+                            Picker(selection: $car.fuelUnit1, label: Text("Fuel unit")) {
                                 ForEach(0 ..< fuelUnits.count) {
                                     Text(self.fuelUnits[$0].value)
                                 }
@@ -124,7 +100,7 @@ struct AddCarView: View {
                             Text("Combustion unit")
                                 .foregroundColor(.gray)
                             Spacer()
-                            Picker(selection: $combustionUnit1, label: Text("Combustion unit")) {
+                            Picker(selection: $car.combustionUnit1, label: Text("Combustion unit")) {
                                 ForEach(0 ..< combustionUnits.count) {
                                     Text(self.combustionUnits[$0].value)
                                 }
@@ -138,13 +114,13 @@ struct AddCarView: View {
                     
                     // Toggler
                     GroupBox {
-                        Toggle(isOn: $isSecondTank) {
+                        Toggle(isOn: $car.isSecondTank) {
                             Text("Second tank")
                                 .foregroundColor(.gray)
                         }
                     }
                     .padding(.top, 5)
-                    .padding(.bottom, isSecondTank ? 5 : -2)
+                    .padding(.bottom, car.isSecondTank ? 5 : -2)
                     .padding(.horizontal)
                     
                     // Fuel - tank 2
@@ -153,7 +129,7 @@ struct AddCarView: View {
                     ){
                         
                         Divider()
-                        TextField("Tank capacity", text: $tankCapacity1)
+                        TextField("Tank capacity", text: $car.tankCapacity2)
                             .keyboardType(.numberPad)
                             .padding(.vertical, 5)
                         
@@ -162,7 +138,7 @@ struct AddCarView: View {
                             Text("Fuel type")
                                 .foregroundColor(.gray)
                             Spacer()
-                            Picker(selection: $fuelType1, label: Text("Fuel type")) {
+                            Picker(selection: $car.fuelType2, label: Text("Fuel type")) {
                                 ForEach(0 ..< fuelTypes.count) {
                                     Text(self.fuelTypes[$0].value)
                                 }
@@ -175,7 +151,7 @@ struct AddCarView: View {
                             Text("Fuel unit")
                                 .foregroundColor(.gray)
                             Spacer()
-                            Picker(selection: $fuelUnit1, label: Text("Fuel unit")) {
+                            Picker(selection: $car.fuelUnit2, label: Text("Fuel unit")) {
                                 ForEach(0 ..< fuelUnits.count) {
                                     Text(self.fuelUnits[$0].value)
                                 }
@@ -188,7 +164,7 @@ struct AddCarView: View {
                             Text("Combustion unit")
                                 .foregroundColor(.gray)
                             Spacer()
-                            Picker(selection: $combustionUnit1, label: Text("Combustion unit")) {
+                            Picker(selection: $car.combustionUnit2, label: Text("Combustion unit")) {
                                 ForEach(0 ..< combustionUnits.count) {
                                     Text(self.combustionUnits[$0].value)
                                 }
@@ -199,8 +175,8 @@ struct AddCarView: View {
                     }
                     .padding(.vertical, 5)
                     .padding(.horizontal)
-                    .opacity(isSecondTank ? 1 : 0)
-                    .frame(height: isSecondTank ? nil : 0)
+                    .opacity(car.isSecondTank ? 1 : 0)
+                    .frame(height: car.isSecondTank ? nil : 0)
                     
                     // Description
                     GroupBox(
@@ -218,14 +194,14 @@ struct AddCarView: View {
                                     Task {
                                         // Retrieve selected asset in the form of Data
                                         if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                                            photo = data
+                                            car.photo = data
                                         }
                                     }
                                 }
                                 .padding(.vertical, 6)
                             Spacer()
-                            if let photo,
-                               let uiImage = UIImage(data: photo) {
+                            if car.photo != nil,
+                               let uiImage = UIImage(data: car.photo!) {
                                 Image(uiImage: uiImage)
                                     .resizable()
                                     //.scaledToFit()
@@ -238,27 +214,22 @@ struct AddCarView: View {
                             }
                         }
                         
-                        
-//                        Divider()
-//                        TextField("Year", text: $year)
-//                            .padding(.vertical, 5)
                         Divider()
                         HStack {
                             Text("Year")
                                 .foregroundColor(.gray)
                             Spacer()
-                            DatePicker(selection: $insurandeDate, displayedComponents: .date) {}
+                            DatePicker(selection: Binding<Date>(get: {car.year ?? Date()}, set: { car.year = $0}), displayedComponents: .date) {}
                                 .padding(.top, 1)
-//                                .padding(.bottom, -5)
                         }
                         .padding(.vertical, 1)
                         
                         Divider()
-                        TextField("VIN", text: $vin)
+                        TextField("VIN", text: $car.vin)
                             .padding(.vertical, 5)
                         
                         Divider()
-                        TextField("Insurande", text: $insurande)
+                        TextField("Insurande", text: $car.insurande)
                             .padding(.vertical, 5)
                         
                         Divider()
@@ -266,7 +237,7 @@ struct AddCarView: View {
                             Text("Insurande date")
                                 .foregroundColor(.gray)
                             Spacer()
-                            DatePicker(selection: $insurandeDate, displayedComponents: .date) {}
+                            DatePicker(selection: Binding<Date>(get: {car.insurandeDate ?? Date()}, set: { car.insurandeDate = $0}), displayedComponents: .date) {}
                                 .padding(.top, 1)
                                 .padding(.bottom, -5)
                         }
@@ -285,7 +256,6 @@ struct AddCarView: View {
                         Button(action: {
                             presentationMode.wrappedValue.dismiss()
                         }, label: {
-                            //Image(systemName: "xmark")
                             Text("Cancel")
                         })
                     }
@@ -295,8 +265,7 @@ struct AddCarView: View {
                             presentationMode.wrappedValue.dismiss()
                         }, label: {
                             Text("Save")
-//                                .disabled(isSaveDisabled)
-                                .disabled(car.name == "")
+                                .disabled(car.name.isEmpty)
                         })
                     }
                 }

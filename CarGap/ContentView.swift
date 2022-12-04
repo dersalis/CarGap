@@ -8,53 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-    @AppStorage("selectedCarName") var selectedCarName: String = ""
+    //@AppStorage("selectedCarName") var selectedCarName: String = ""
     
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading) {
-                
-            }
-            .navigationTitle(selectedCarName)
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Menu {
-                        Section {
-                            Button(action: {
-                                selectedCarName = "Dacia Duster"
-                            }) {
-                                Label("Dacia Duster", systemImage: "doc")
-                            }
-
-                            Button(action: {
-                                selectedCarName = "Renault Clio"
-                            }) {
-                                Label("Renault Clio", systemImage: "folder")
-                            }
-                        }
-                        Section {
-                            Button(action: {}) {
-                                Label("Add car", systemImage: "plus")
-                            }
-                        }
-                    }
-                    label: {
-                        Label("Cars", systemImage: "car.2")
-                    }
+        TabView {
+            CarView()
+                .tabItem {
+                    Label("Garage", systemImage: "door.garage.closed")
                 }
-                
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button {
-//                        //showingAddView.toggle()
-//                    } label: {
-//                        Label("Cars", systemImage: "car.2")
-//                    }
-//                }
-
-            }
-        }
-        .onAppear {
-            selectedCarName = "Selected Car" // TODO: Usunąć
+            RefuelingHistoryView()
+                .tabItem {
+                    Label("History", systemImage: "chart.bar.fill")
+                }
+            StatisticsView()
+                .tabItem {
+                    Label("Statistics", systemImage: "chart.xyaxis.line")
+                }
+            CarsView()
+                .tabItem {
+                    Label("Cars", systemImage: "car.2.fill")
+                }
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "slider.vertical.3")
+                }
         }
     }
 }

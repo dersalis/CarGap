@@ -29,6 +29,7 @@
 		DAA805C8293942FD00019ACB /* CarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C7293942FD00019ACB /* CarController.swift */; };
 		DAA805CA293BBC3C00019ACB /* CarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805C9293BBC3C00019ACB /* CarsView.swift */; };
 		DAA805CC293BEB4700019ACB /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805CB293BEB4700019ACB /* CircleImage.swift */; };
+		DAA805CF293D2D2B00019ACB /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA805CE293D2D2B00019ACB /* UUID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		DAA805C7293942FD00019ACB /* CarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarController.swift; sourceTree = "<group>"; };
 		DAA805C9293BBC3C00019ACB /* CarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsView.swift; sourceTree = "<group>"; };
 		DAA805CB293BEB4700019ACB /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		DAA805CE293D2D2B00019ACB /* UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				DAA805B729257ADD00019ACB /* UIApplication.swift */,
+				DAA805CE293D2D2B00019ACB /* UUID.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				DAA805B829257ADD00019ACB /* UIApplication.swift in Sources */,
 				DAA805BB29257F1300019ACB /* PickerItem.swift in Sources */,
 				DAA805C329258A2200019ACB /* FuelTypesData.swift in Sources */,
+				DAA805CF293D2D2B00019ACB /* UUID.swift in Sources */,
 				DA6EC6312922D5B6006621E4 /* CarGapApp.swift in Sources */,
 				DAA805BD2925895D00019ACB /* DistanceUnitsData.swift in Sources */,
 				DAA805CA293BBC3C00019ACB /* CarsView.swift in Sources */,

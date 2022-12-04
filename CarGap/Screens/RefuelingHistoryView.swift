@@ -97,6 +97,7 @@ struct RefuelingHistoryView: View {
                         .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                         
                     }
+                    .padding(.top, 5)
 
                 }
                 .padding(.top, 5)

@@ -29,21 +29,22 @@ class CarController: ObservableObject {
     }
     
     func addCar(newCar: AddCar, context: NSManagedObjectContext) {
+        
         let car: Car = Car(context: context)
         car.id = UUID()
         car.name = newCar.name
         car.mark = newCar.mark
         car.model = newCar.model
         car.registrationNo = newCar.registrationNo
-        car.tankCapacity1 = newCar.tankCapacity1
-        car.fuelType1 = newCar.fuelType1
-        car.fuelUnit1 = newCar.fuelUnit1
-        car.combustionUnit1 = newCar.combustionUnit1
+        car.tankCapacity1 = Int16(newCar.tankCapacity1) ?? 0
+        car.fuelType1 = Int16(newCar.fuelType1)
+        car.fuelUnit1 = Int16(newCar.fuelUnit1)
+        car.combustionUnit1 = Int16(newCar.combustionUnit1)
         car.isSecondTank = newCar.isSecondTank
-        car.tankCapacity2 = newCar.tankCapacity2
-        car.fuelType2 = newCar.fuelType2
-        car.fuelUnit2 = newCar.fuelUnit2
-        car.combustionUnit2 = newCar.combustionUnit2
+        car.tankCapacity2 = Int16(newCar.tankCapacity2) ?? 0
+        car.fuelType2 = Int16(newCar.fuelType2)
+        car.fuelUnit2 = Int16(newCar.fuelUnit2)
+        car.combustionUnit2 = Int16(newCar.combustionUnit2)
         car.photo = newCar.photo
         car.year = newCar.year
         car.vin = newCar.vin
@@ -51,6 +52,7 @@ class CarController: ObservableObject {
         car.insuranceDate = newCar.insurandeDate
         
         car.modificationDate = Date()
+        
         
         save(context: context)
     }
