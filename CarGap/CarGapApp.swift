@@ -14,7 +14,7 @@ struct CarGapApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, carController.container.viewContext)
+                //.environment(\.managedObjectContext, carController.container.viewContext)
         }
     }
 }

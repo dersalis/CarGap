@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct CarView: View {
-    @AppStorage("selectedCarName") var selectedCarName: String = "Car"
+    @AppStorage("selectedCarUUID") var selectedCarUUID: UUID?
+    @State private var selectedCar: Car? = nil
     
-    @State private var isShowingAddCar: Bool = false
+//    @State private var isShowingAddCar: Bool = false
     
     private let screenWidth = UIScreen.main.bounds.size.width
     private let screenHeight = UIScreen.main.bounds.size.height
@@ -19,7 +20,7 @@ struct CarView: View {
         NavigationView {
             ZStack(alignment: .top){
                 
-                Image("mycar")
+                Image("mycar2")
                     .resizable()
                     .scaledToFill()
                     .frame(minWidth: 0, maxWidth: screenWidth, minHeight: 0, maxHeight: screenHeight / 2, alignment: .top)
@@ -28,19 +29,19 @@ struct CarView: View {
                 CarBackgroundView()
                 
                 VStack (alignment: .leading) {
-                    NavigationLink(destination: CarsView()) {
-                        HStack{
-                            Text("Cars")
-                                .font(.system(size: 20))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.primary)
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 16))
-                                .foregroundColor(.gray)
-                        }
-                        .padding(.bottom, -5)
-                    .padding(.top, 10)
-                    }
+//                    NavigationLink(destination: CarsView()) {
+//                        HStack{
+//                            Text("Cars")
+//                                .font(.system(size: 20))
+//                                .fontWeight(.semibold)
+//                                .foregroundColor(.primary)
+//                            Image(systemName: "chevron.right")
+//                                .font(.system(size: 16))
+//                                .foregroundColor(.gray)
+//                        }
+//                        .padding(.bottom, -5)
+//                    .padding(.top, 10)
+//                    }
                     
                     GroupBox(
                         label: Label("Selected car", systemImage: "car")
@@ -51,19 +52,19 @@ struct CarView: View {
                     .padding(.vertical, 5)
                     
                     
-                    NavigationLink(destination: CarsView()) {
-                        HStack{
-                            Text("Other")
-                                .font(.system(size: 20))
-                                .fontWeight(.semibold)
-                                .foregroundColor(.primary)
-                            Image(systemName: "chevron.right")
-                                .font(.system(size: 16))
-                                .foregroundColor(.gray)
-                        }
-                        .padding(.bottom, -5)
-                    .padding(.top, 10)
-                    }
+//                    NavigationLink(destination: CarsView()) {
+//                        HStack{
+//                            Text("Other")
+//                                .font(.system(size: 20))
+//                                .fontWeight(.semibold)
+//                                .foregroundColor(.primary)
+//                            Image(systemName: "chevron.right")
+//                                .font(.system(size: 16))
+//                                .foregroundColor(.gray)
+//                        }
+//                        .padding(.bottom, -5)
+//                    .padding(.top, 10)
+//                    }
                     
                 }
                 .padding(.horizontal)
@@ -71,11 +72,14 @@ struct CarView: View {
                 
             }
             .edgesIgnoringSafeArea(.all)
-            .navigationTitle(selectedCarName)
+            //.navigationTitle(selectedCarName)
         }
-        .sheet(isPresented: $isShowingAddCar){
-            AddCarView()
-        }
+        .onAppear(perform: {
+            //CarController().count()
+        })
+//        .sheet(isPresented: $isShowingAddCar){
+//            AddCarView()
+//        }
     }
 }
 

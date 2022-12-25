@@ -10,7 +10,7 @@ import PhotosUI
 
 struct AddCarView: View {
     @Environment(\.presentationMode) var presentationMode
-    @Environment(\.managedObjectContext) var managedObjectContext
+//    @Environment(\.managedObjectContext) var managedObjectContext
     
     private let fuelTypes: [PickerItem] = fuelTypesData
     private let fuelUnits: [PickerItem] = fuelUnitsData
@@ -261,7 +261,8 @@ struct AddCarView: View {
                     }
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
-                            CarController().addCar(newCar: car, context: managedObjectContext)
+                            // CarController().addCar(newCar: car, context: managedObjectContext)
+                            CarController().add(newCar: car)
                             presentationMode.wrappedValue.dismiss()
                         }, label: {
                             Text("Save")
